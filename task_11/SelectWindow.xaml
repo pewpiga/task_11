@@ -8,7 +8,10 @@
         WindowStartupLocation="CenterScreen"
         Title="Выбор роли" Height="150" Width="400" MaxWidth="400" MaxHeight="150" MinWidth="400" MinHeight="150" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="NoResize">
     <Grid Margin="10,10,10,9">
-        <ComboBox Margin="0,0,0,57" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="244"/>
+        <ComboBox Margin="0,0,0,57" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="244" SelectedIndex="0">
+            <ComboBoxItem Content="Консультант"/>
+            <ComboBoxItem Content="Менеджер"/>
+        </ComboBox>
         <Button Content="Выбрать" HorizontalAlignment="Center" Margin="0,0,0,21" Width="144" Height="20" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
