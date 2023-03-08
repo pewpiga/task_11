@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="Основное окно" Height="450" Width="800">
     <Grid Margin="10,10,10,9">
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,390,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="ClientsGrid" AutoGenerateColumns="True" Margin="0,0,370,0" CellEditEnding="ClientsGrid_CellEditEnding" BeginningEdit="ClientsGrid_BeginningEdit" Grid.ColumnSpan="2"/>
+        <Button x:Name="SaveChanges" Content="Сохранить изменения" Margin="25,0,150,0" RenderTransformOrigin="0.505,0.503" Height="34" VerticalAlignment="Top" Click="SaveChanges_Click" IsEnabled="False" Grid.Column="1"/>
+
+        <Grid x:Name="AddClientGrid" Grid.Column="1" Margin="0,90,0,90" HorizontalAlignment="Center" Width="234" Visibility="Hidden">
+            <TextBox x:Name="SecondNameTB" Margin="120,39,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="FirstNameTB" Margin="120,62,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="LastNameTB" Margin="120,85,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="PhoneTB" Margin="120,109,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="PassportTB" Margin="120,131,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Label Content="Фамилия" Margin="60,34,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" Grid.Column="1"/>
+            <Label Content="Имя" Margin="87,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33" Grid.Column="1"/>
+            <Label Content="Отчество" Margin="59,81,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="61" Grid.Column="1"/>
+            <Label Content="Телефон" Margin="63,104,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="57" Grid.Column="1"/>
+            <Label Content="Паспорт" Margin="64,127,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="56" Grid.Column="1"/>
+            <Button x:Name="AddClientButton" Content="Добавить клиента" HorizontalAlignment="Left" Margin="72,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.503" Width="152" Height="35" Click="AddClientButton_Click"/>
+        </Grid>
     </Grid>
 </Window>

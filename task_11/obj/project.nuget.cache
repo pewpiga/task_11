@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kW/hfctVwHXCJEEeAwFkKfj4lqhbv3qhXqGy6wbDb7XRTGjbG+8+d7lj4aV9lTwsPF3Qyt5KsMxb1TGr4+3Ucw==",
+  "dgSpecHash": "sOAyBUq9KyXy8MWrgkP8fcpctniZEOEl/P9UR72dxml+VM1zaAIzXYjo3r/P0kaHkBHWTfaCsymxIYbm4SXd6g==",
   "success": true,
   "projectFilePath": "C:\\Users\\gilmu\\source\\repos\\task_11\\task_11\\task_11.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gilmu\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

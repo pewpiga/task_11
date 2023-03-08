@@ -20,9 +20,18 @@ namespace task_11
     /// </summary>
     public partial class SelectWindow : Window
     {
+        MainOperations mainOperations;
         public SelectWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string roleName = roleCB.Text;
+            MainWindow mainWindow = new MainWindow(roleName);
+            this.Close();
+            mainWindow.Show();
         }
     }
 }

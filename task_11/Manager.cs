@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace task_11
 {
-    class Manager : Consultant
+    class Manager : Consultant, IManager
     {
+        public string editor { get; set; }
+        public Manager()
+        {
+            base.editor = "Manager";
+            editor = "Manager";
+        }
         /// <summary>
         /// Метод для изменения Ф.И.О. клиента
         /// </summary>
@@ -18,8 +24,22 @@ namespace task_11
         /// <param name="secondName">Новое отчество</param>
         public void SetFullName(Client client, string lastName, string firstName, string secondName)
         {
+            if (client.LastName != lastName)
+            {
+                client.ChangeLog.Add(new ChangeLog(DateTime.Now, "LastName", client.LastName, lastName, editor));
+            }
             client.LastName = lastName;
+
+            if (client.FirstName != firstName)
+            {
+                client.ChangeLog.Add(new ChangeLog(DateTime.Now, "FirstName", client.FirstName, firstName, editor));
+            }
             client.FirstName = firstName;
+
+            if (client.SecondName != secondName)
+            {
+                client.ChangeLog.Add(new ChangeLog(DateTime.Now, "SecondName", client.SecondName, secondName, editor));
+            }
             client.SecondName = secondName;
         }
         /// <summary>
@@ -29,6 +49,10 @@ namespace task_11
         /// <param name="passportNumber">Новый номер паспорта</param>
         public void SetPassportNumber(Client client, string passportNumber)
         {
+            if (client.PassportNumber != passportNumber)
+            {
+                client.ChangeLog.Add(new ChangeLog(DateTime.Now, "Passport", client.PassportNumber, passportNumber, editor));
+            }
             client.PassportNumber = passportNumber;
         }
         /// <summary>

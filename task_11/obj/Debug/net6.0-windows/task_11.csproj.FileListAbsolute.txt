@@ -23,3 +23,5 @@ C:\Users\gilmu\source\repos\task_11\task_11\obj\Debug\net6.0-windows\refint\task
 C:\Users\gilmu\source\repos\task_11\task_11\obj\Debug\net6.0-windows\task_11.pdb
 C:\Users\gilmu\source\repos\task_11\task_11\obj\Debug\net6.0-windows\task_11.genruntimeconfig.cache
 C:\Users\gilmu\source\repos\task_11\task_11\obj\Debug\net6.0-windows\ref\task_11.dll
+C:\Users\gilmu\source\repos\task_11\task_11\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\gilmu\source\repos\task_11\task_11\obj\Debug\net6.0-windows\task_11.csproj.CopyComplete

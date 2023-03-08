@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace task_11
 {
-    class Employee
+    abstract class Employee
     {
-        private Client _client;
         public Employee()
         {
-            _client = new Client();
         }
         /// <summary>
         /// Метод, возвращающий информацию о клиенте
@@ -20,6 +18,9 @@ namespace task_11
         /// <returns></returns>
         public Client GetClientData(Client client)
         {
+            Client _client = new Client();
+
+            _client.Id = client.Id;
             _client.SecondName = client.SecondName;
             _client.FirstName = client.FirstName;
             _client.LastName = client.LastName;

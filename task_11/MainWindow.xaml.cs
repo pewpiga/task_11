@@ -21,9 +21,50 @@ namespace task_11
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private MainOperations mainOperations;
+        private Client selectedItem;
+
+        ObservableCollection<Client> clients = new ObservableCollection<Client>();
+        public MainWindow(string roleName)
         {
             InitializeComponent();
+            mainOperations = new MainOperations(roleName);
+
+
+            if (roleName == "Менеджер")
+                AddClientGrid.Visibility = Visibility.Visible;
+
+            ClientsGrid.ItemsSource = clients;
+            mainOperations.FillGrid(clients);
+        }
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            mainOperations.SetData(selectedItem);
+            SaveChanges.IsEnabled = false;
+        }
+
+        private void ClientsGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            SaveChanges.IsEnabled = true;
+        }
+
+        private void ClientsGrid_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
+        {
+            selectedItem = (Client)ClientsGrid.SelectedItem;
+        }
+
+        private void AddClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client()
+            {
+                Id = ClientsGrid.Items.Count,
+                LastName = LastNameTB.Text,
+                FirstName = FirstNameTB.Text,
+                SecondName = SecondNameTB.Text,
+                PhoneNumber = Convert.ToUInt64(PhoneTB.Text),
+                PassportNumber = PassportTB.Text
+            };
+            mainOperations.AddData(clients, client);
         }
     }
 }
